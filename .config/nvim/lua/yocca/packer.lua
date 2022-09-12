@@ -1,0 +1,17 @@
+return require("packer").startup(function(use)
+    use { "wbthomason/packer.nvim" }
+
+    use { "tpope/vim-fugitive" }
+
+    use { "ThePrimeagen/vim-be-good" }
+
+    use { "junegunn/fzf.vim", requires = { "junegunn/fzf", run = function() vim.fn["fzf#install"]() end } }
+
+    use { "editorconfig/editorconfig-vim" }
+
+    use { "github/copilot.vim" }
+
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+end)
+
