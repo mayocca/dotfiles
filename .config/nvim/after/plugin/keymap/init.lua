@@ -10,3 +10,8 @@ nnoremap("<C-f>", "<Cmd>Files<CR>")
 nnoremap("<Leader>b", "<Cmd>Buffers<CR>")
 nnoremap("<Leader>f", "<Cmd>Rg<CR>")
 
+--nnoremap("<Up>", "<NOP>")
+--nnoremap("<Down>", "<NOP>")
+--nnoremap("<Left>", "<NOP>")
+--nnoremap("<Right>", "<NOP>")
+
