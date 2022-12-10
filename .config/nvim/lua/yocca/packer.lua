@@ -5,9 +5,15 @@ return require("packer").startup(function(use)
 
     use { "ThePrimeagen/vim-be-good" }
 
-    use { "junegunn/fzf.vim", requires = { "junegunn/fzf", run = function() vim.fn["fzf#install"]() end } }
+    --use { "junegunn/fzf.vim", requires = { "junegunn/fzf", run = function() vim.fn["fzf#install"]() end } }
+    
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+
+    use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
 
     use { "editorconfig/editorconfig-vim" }
+
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use { "github/copilot.vim" }
 
