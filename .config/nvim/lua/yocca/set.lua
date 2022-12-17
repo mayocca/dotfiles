@@ -45,4 +45,6 @@ vim.opt.grepprg = "rg --vimgrep --smart-case --follow --glob '!{.git,node_module
 
 vim.g.mapleader = " "
 
+vim.g.netrw_banner = false
+vim.g.netrw_liststyle = 3
 

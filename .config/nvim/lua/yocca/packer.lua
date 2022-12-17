@@ -7,7 +7,9 @@ return require("packer").startup(function(use)
 
     --use { "junegunn/fzf.vim", requires = { "junegunn/fzf", run = function() vim.fn["fzf#install"]() end } }
     
-    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+    use { "nvim-treesitter/nvim-treesitter"}
+
+    use { "nvim-treesitter/playground" }
 
     use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
 
