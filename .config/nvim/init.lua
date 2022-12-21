@@ -1,2 +1,2 @@
-require("yocca")
+require('yocca')
 

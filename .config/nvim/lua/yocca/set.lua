@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+vim.opt.guicursor = ''
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -14,7 +14,7 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
@@ -26,8 +26,8 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.opt.signcolumn = 'yes'
+vim.opt.isfname:append('@-@')
 
 -- Give more space for displaying messages
 vim.opt.cmdheight = 1
@@ -37,14 +37,13 @@ vim.opt.cmdheight = 1
 vim.opt.updatetime = 50
 
 -- Don't pass messages to |ins-completion-menu|.
-vim.opt.shortmess:append("c")
+vim.opt.shortmess:append('c')
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = '80'
 
-vim.opt.grepprg = "rg --vimgrep --smart-case --follow --glob '!{.git,node_modules}/*'"
+vim.opt.grepprg = 'rg --vimgrep --smart-case --follow --glob \'!{.git,node_modules}/*\''
 
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 vim.g.netrw_banner = false
-vim.g.netrw_liststyle = 3
 
