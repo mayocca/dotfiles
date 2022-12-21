@@ -17,8 +17,11 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-Space>'] = cmp.mapping.complete(),
 })
 
+cmp_mappings['<Tab>'] = nil
+cmp_mappings['<S-Tab>'] = nil
+
 lsp.set_preferences({
-    sign_icons = { },
+    --sign_icons = { },
 })
 
 lsp.setup_nvim_cmp({
@@ -26,4 +29,8 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true,
+})
 
