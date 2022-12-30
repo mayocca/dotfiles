@@ -1,8 +1,8 @@
 # <<----- Gaps ----->>
 gaps outer 5
-gaps inner 24
+gaps inner 10
 #gaps left 22
-gaps top 56
+gaps top 44
 
 # <<----- Window Style ----->>
 for_window [class="^.*"] border pixel 0
