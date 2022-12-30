@@ -1,4 +1,5 @@
 # <<----- Variables ----->>
+set $lock i3lock
 set $polybar ~/.config/polybar/scripts/launch.sh
 set $rofi ~/.config/rofi/scripts/launch.sh
 set $term --no-startup-id kitty
@@ -156,6 +157,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Lock screen
+bindsym Mod4+l exec --no-startup-id $lock
 # <<---------- Status Bar ---------->>
 #bar {
 #    position top
