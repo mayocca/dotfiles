@@ -6,6 +6,7 @@ set $term --no-startup-id kitty
 
 # <<---------- General Settings ---------->>
 font pango:monospace 10
+exec_always bash -c "feh --bg-fill --randomize ~/.config/i3/wallpapers/*"
 exec --no-startup-id --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id --no-startup-id nm-applet
