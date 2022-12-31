@@ -12,4 +12,5 @@ floating_modifier $mod
 # Imports
 include ~/.config/i3/binds
 include ~/.config/i3/gaps
+include ~/.config/i3/windows
 
