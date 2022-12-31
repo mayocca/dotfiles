@@ -1,5 +1,5 @@
 # <<----- Gaps ----->>
-gaps outer 5
+gaps outer 25
 gaps inner 10
 #gaps left 22
 gaps top 44
