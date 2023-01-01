@@ -2,10 +2,14 @@ local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 
-lsp.ensure_installed({
-    'intelephense',
-    'rust_analyzer',
-    'sumneko_lua',
+lsp.configure('sumneko_lua', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            },
+        },
+    },
 })
 
 local cmp = require('cmp')
