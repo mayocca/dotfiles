@@ -10,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
     "--branch=stable", -- latest stable release
     lazypath,
   })
+  require "core.post_install"()
 end
 vim.opt.rtp:prepend(lazypath)
 

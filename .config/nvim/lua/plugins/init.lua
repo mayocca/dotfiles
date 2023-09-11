@@ -4,7 +4,7 @@ local default_plugins = {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true,
+      -- transparent = true,
       dim_inactive = true,
     },
     init = function ()
@@ -24,12 +24,18 @@ local default_plugins = {
   -- lsp
   {
     "williamboman/mason.nvim",
-    cmd = { "Mason", "MasonInstall", "MasonUpdate" },
+    cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
     opts = function()
       return require("plugins.configs.mason")
     end,
     config = function(_, opts)
       require("mason").setup(opts)
+
+      vim.api.nvim_create_user_command("MasonInstallAll", function()
+        vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
+      end, {})
+
+      vim.g.mason_binaries_list = opts.ensure_installed
     end,
   },
   {
@@ -47,6 +53,10 @@ local default_plugins = {
       {
         "L3MON4D3/LuaSnip",
         dependencies = "rafamadriz/friendly-snippets",
+        opts = { history = true, updateevents = "TextChanged,TextChangedI" },
+        config = function(_, opts)
+          require("plugins.configs.others").luasnip(opts)
+        end,
       },
 
       -- autopairing of (){}[]
