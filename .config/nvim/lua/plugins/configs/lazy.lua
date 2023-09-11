@@ -1,6 +1,6 @@
 local options = {
   defaults = {
---  lazy = true,
+    lazy = false,
   },
 
   performance = {
