@@ -1,0 +1,6 @@
+[tools]
+bun = '^1.0'
+go = '1.21'
+node = '20'
+python = '3'
+yarn = '1'
