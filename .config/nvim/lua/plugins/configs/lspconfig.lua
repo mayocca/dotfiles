@@ -1,5 +1,6 @@
 local servers = {
   "astro",
+  "rust_analyzer",
 }
 
 local options = {
