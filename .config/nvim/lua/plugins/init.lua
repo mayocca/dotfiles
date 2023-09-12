@@ -7,11 +7,12 @@ local default_plugins = {
       -- transparent = true,
       dim_inactive = true,
     },
-    init = function ()
-      vim.cmd[[colorscheme tokyonight]]
+    init = function()
+      vim.cmd [[colorscheme tokyonight]]
     end,
   },
-  {"nvim-treesitter/nvim-treesitter",
+  {
+    "nvim-treesitter/nvim-treesitter",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
     opts = function()
@@ -21,6 +22,7 @@ local default_plugins = {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
+
   -- lsp
   {
     "williamboman/mason.nvim",
@@ -75,16 +77,21 @@ local default_plugins = {
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
+        "hrsh7th/cmp-buffer",
       },
     },
-    opts = function ()
+    opts = function()
       return require("plugins.configs.cmp")
     end,
     config = function(_, opts)
       require("cmp").setup(opts)
     end,
+  },
+  {
+    "folke/which-key.nvim",
+    keys = { "<leader>", "<c-r>", '"', "'", "`", "c", "v", "g" },
+    cmd = "WhichKey",
   },
 };
 

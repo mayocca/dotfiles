@@ -1,33 +1,37 @@
-local cmp = require("cmp")
-
-local function border(hl_name)
-  return {
-    { "╭", hl_name },
-    { "─", hl_name },
-    { "╮", hl_name },
-    { "│", hl_name },
-    { "╯", hl_name },
-    { "─", hl_name },
-    { "╰", hl_name },
-    { "│", hl_name },
-  }
-end
+local cmp = require "cmp"
 
 local M = {}
 
 M.completion = {
-  completeopt = "menu,menuone",
+  completeopt = "menu,menuone,noselect",
 }
 
-M.window = {
-  completion = {
-    winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
-    scrollbar = false,
+M.mapping = {
+  ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+  ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+  ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+  ["<C-f>"] = cmp.mapping.scroll_docs(4),
+  ["<C-e>"] = cmp.mapping.abort(),
+  ["<C-y>"] = cmp.mapping(
+    cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    },
+    { "i", "c" }
+  ),
+  ["<C-Space>"] = cmp.mapping {
+    i = cmp.mapping.complete(),
+    c = function(_)
+      if cmp.visible() then
+        if not cmp.confirm { select = true } then
+          return
+        end
+      else
+        cmp.complete()
+      end
+    end,
   },
-  documentation = {
-    border = border "CmpDocBorder",
-    winhighlight = "Normal:CmpDoc",
-  },
+  ["<Tab>"] = cmp.config.disable,
 }
 
 M.snippet = {
@@ -36,49 +40,13 @@ M.snippet = {
   end,
 }
 
-M.mapping = {
-  ["<C-p>"] = cmp.mapping.select_prev_item(),
-  ["<C-n>"] = cmp.mapping.select_next_item(),
-  ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-  ["<C-f>"] = cmp.mapping.scroll_docs(4),
-  ["<C-Space>"] = cmp.mapping.complete(),
-  ["<C-e>"] = cmp.mapping.close(),
-  ["<CR>"] = cmp.mapping.confirm {
-    behavior = cmp.ConfirmBehavior.Insert,
-    select = true,
-  },
-  ["<Tab>"] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      cmp.select_next_item()
-    elseif require("luasnip").expand_or_jumpable() then
-      vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-    else
-      fallback()
-    end
-    end, {
-      "i",
-      "s",
-    }),
-  ["<S-Tab>"] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      cmp.select_prev_item()
-    elseif require("luasnip").jumpable(-1) then
-      vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-    else
-      fallback()
-    end
-  end, {
-  "i",
-  "s",
-    }),
-  }
-
-  M.sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "nvim_lua" },
-    { name = "path" },
-  }
+M.sources = cmp.config.sources({
+  { name = "nvim_lua" },
+  { name = "nvim_lsp" },
+  { name = "luasnip" },
+}, {
+  { name = "path" },
+  { name = "buffer", keyword_length = 5 }
+})
 
 return M

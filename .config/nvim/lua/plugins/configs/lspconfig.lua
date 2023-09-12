@@ -4,8 +4,8 @@ local servers = {
 
 local options = {
   on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
+    client.server_capabilities.documentFormattingProvider = true
+    client.server_capabilities.documentRangeFormattingProvider = true
 
     -- utils.load_mappings("lspconfig", { buffer = bufnr })
 
