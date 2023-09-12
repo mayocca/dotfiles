@@ -7,9 +7,9 @@ local default_plugins = {
       -- transparent = true,
       dim_inactive = true,
     },
-    init = function()
-      vim.cmd [[colorscheme tokyonight]]
-    end,
+    config = function()
+      vim.cmd[[colorscheme tokyonight]]
+    end
   },
   {
     "nvim-treesitter/nvim-treesitter",
