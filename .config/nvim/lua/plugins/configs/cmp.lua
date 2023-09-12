@@ -49,4 +49,19 @@ M.sources = cmp.config.sources({
   { name = "buffer", keyword_length = 5 }
 })
 
+local lspkind = require("lspkind")
+
+M.formatting = {
+  format = lspkind.cmp_format({
+    with_text = true,
+    menu = {
+      buffer = "[buf]",
+      luasnip = "[snip]",
+      nvim_lsp = "[LSP]",
+      nvim_lua = "[api]",
+      path = "[path]",
+    },
+  })
+}
+
 return M
