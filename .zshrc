@@ -15,3 +15,5 @@ export HERD_PHP_83_INI_SCAN_DIR="/Users/Matias/Library/Application Support/Herd/
 # Herd injected PHP binary.
 export PATH="/Users/Matias/Library/Application Support/Herd/bin/":$PATH
 
+alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+
