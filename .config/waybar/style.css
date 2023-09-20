@@ -1,7 +1,6 @@
 window#waybar {
-    /*background-color: rgba(43, 48, 59, 0.8);*/
-    background-color: alpha(@theme_bg_color, 0.5);
-    border-bottom: 3px solid alpha(@borders, 0.25);
+    background-color: rgba(20, 20, 20, 0.8);
+    border-bottom: 3px solid rgba(64, 64, 64, 0.8);
     color: #ffffff;
 }
 
@@ -13,6 +12,12 @@ button {
     border-radius: 0;
 }
 
+#workspaces {
+  background-color: rgb(64, 64, 64);
+  padding: 0 16px;
+  border-radius: 16px;
+}
+
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
@@ -21,14 +26,21 @@ button {
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 -3px #ffffff;
+    /*box-shadow: inset 0 -3px #ffffff;*/
+    box-shadow: inherit;
+    text-shadow: inherit;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+}
+
+#clock {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 1rem;
 }
