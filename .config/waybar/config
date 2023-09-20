@@ -22,7 +22,7 @@
       "default": "󰝤"
     },
     "persistent_workspaces": {
-      "*": 5,
+      "*": 3,
     }
   },
   "clock": {
