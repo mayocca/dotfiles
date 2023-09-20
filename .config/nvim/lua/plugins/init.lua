@@ -4,7 +4,7 @@ local default_plugins = {
     lazy = false,
     priority = 1000,
     opts = {
-      -- transparent = true,
+      transparent = true,
       dim_inactive = true,
     },
     config = function()
