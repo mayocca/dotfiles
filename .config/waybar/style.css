@@ -36,6 +36,7 @@ button {
 
 #clock,
 #language,
+#pulseaudio,
 #tray {
   background-color: rgb(64, 64, 64);
   padding: 0 16px;
