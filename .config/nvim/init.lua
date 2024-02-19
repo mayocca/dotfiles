@@ -1,5 +1,6 @@
 require("core")
 
+-- Install lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,7 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
   require "core.post_install"()
 end
-vim.opt.rtp:prepend(lazypath)
-
+vim.opt.runtimepath:prepend(lazypath)
 
 require("plugins")
+

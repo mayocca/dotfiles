@@ -2,5 +2,4 @@
 bun = '^1'
 go = '^1.21'
 node = 'lts'
-python = '^3.11'
-yarn = '^1'
+python = '^3.10'
