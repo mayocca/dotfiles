@@ -4,6 +4,7 @@ go = 'latest'
 neovim = 'latest'
 node = ['latest', 'lts']
 python = 'latest'
+zoxide = "latest"
 
 [settings]
 

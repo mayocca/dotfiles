@@ -9,6 +9,7 @@ setopt appendhistory
 . "$HOME/.cargo/env"
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
