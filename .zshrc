@@ -1,5 +1,3 @@
-alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
